@@ -161,18 +161,35 @@ PUT /tasks/1/
 ## Project Structure
 
 ```
-project_root/
-|├── manage.py
-|├── task_manager/
-|   |├── migrations/
-|   |├── __init__.py
-|   |├── models.py
-|   |├── serializers.py
-|   |├── views.py
-|   |├── urls.py
-|   └── admin.py
-|├── requirements.txt
-└── README.md
+.
+├── LICENSE
+├── Procfile
+├── README.md
+├── docker-compose.yml
+├── lists
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+├── requirements.txt
+├── runtime.txt
+├── static
+│   ├── admin
+│   └── rest_framework
+└── todo
+    ├── __init__.py
+    ├── __pycache__
+    ├── asgi.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+
 
 ```
 
