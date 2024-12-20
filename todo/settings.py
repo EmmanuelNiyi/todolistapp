@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "lists.apps.ListsConfig",
     "rest_framework",
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React app
+    "https://legendary-melba-326e52.netlify.app/",  # Your deployed frontend
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'todo.urls'
 
@@ -79,17 +91,6 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.getenv('POSTGRES_DB', 'default_db_name'),
-#         'USER': os.getenv('POSTGRES_USER', 'default_user'),
-#         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'default_password'),
-#         'HOST': os.getenv('POSTGRES_HOST', 'localhost'),  # Default to localhost
-#         'PORT': os.getenv('POSTGRES_PORT', '5432'),       # Default PostgreSQL port
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
