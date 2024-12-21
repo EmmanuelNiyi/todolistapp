@@ -63,6 +63,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React app
+    "https://taskhivetracker.netlify.app"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
