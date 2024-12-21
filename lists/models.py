@@ -6,8 +6,8 @@ from django.db import models
 class Task(models.Model):
     title = models.CharField(max_length=255)
     list_type = models.CharField(max_length=255)
-    description = models.TextField()
-    due_date = models.DateField()
+    description = models.TextField(null=True, blank=True)
+    due_date = models.DateField(null=True, blank=True)
     display = models.BooleanField(default=False)
     checked = models.BooleanField(default=False)
 

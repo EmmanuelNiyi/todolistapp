@@ -5,7 +5,7 @@ from .models import Task, SubTask
 class SubTaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubTask
-        exclude = ["id" ,"task"]
+        exclude = ["id", "task"]
 
 
 class TaskSerializer(serializers.ModelSerializer):
@@ -48,4 +48,3 @@ class TaskSerializer(serializers.ModelSerializer):
                 SubTask.objects.create(task=instance, **subtask_data)
 
         return instance
-
